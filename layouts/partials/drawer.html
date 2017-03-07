@@ -21,16 +21,25 @@
       {{ if (eq (trim .Site.Params.provider " " | lower) "github") | and (isset .Site.Params "repo_url") }}
         <ul class="repo">
           <li class="repo-download">
-            <a href="{{ .Site.Params.repo_url }}/archive/master.zip" target="_blank" title="Download" data-action="download">
-              <i class="icon icon-download"></i> Download
+            <a href="https://github.com/forestgiant" target="_blank" title="Stela" data-action="download">
+              DL Stela
+              <!-- <i class="icon icon-github"></i> -->
             </a>
           </li>
-          <li class="repo-stars">
+
+          <li class="repo-download">
+            <a href="https://github.com/forestgiant" target="_blank" title="Iris" data-action="download">
+              DL Iris
+              <!-- <i class="icon icon-github"></i> -->
+            </a>
+          </li>
+
+          <!-- <li class="repo-download">
             <a href="{{ .Site.Params.repo_url }}/stargazers" target="_blank" title="Stargazers" data-action="star">
               <i class="icon icon-star"></i> Stars
               <span class="count">&ndash;</span>
             </a>
-          </li>
+          </li> -->
         </ul>
         <hr>
       {{ end }}

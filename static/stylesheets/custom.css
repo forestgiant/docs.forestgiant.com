@@ -1,3 +1,29 @@
 .header {
   background-color: #F2F2F3 !important;
 }
+
+/*** FLEXBOX ***/
+
+.flex-container {
+  display: -ms-flex;
+  display: -webkit-flex;
+  display: flex;
+}
+
+.flex-container > .column {
+  flex: 1;
+  padding: 0 30px;
+}
+
+
+@media only screen and (max-width:768px) {
+  
+  .flex-container {
+    flex-direction: column;
+  }
+
+  .flex-container > .column {
+    padding: 0;
+  }
+
+}

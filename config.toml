@@ -48,17 +48,17 @@ googleAnalytics = ""
 [[menu.main]]
 	name   = "Overview"
 	url    = "/"
-	weight = 0
+	weight = 10
 
 [[menu.main]]
 	name   = "Stela"
 	url    = "stela/"
-	weight = 10
+	weight = 20
 
 [[menu.main]]
 	name   = "Iris"
 	url    = "iris/"
-	weight = 20
+	weight = 30
 
 
 [blackfriday]
