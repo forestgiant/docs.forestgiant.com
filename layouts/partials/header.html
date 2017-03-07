@@ -6,9 +6,9 @@
       </label>
     </div>
     <div class="stretch">
-      <div class="title">
+      <!-- <div class="title">
         {{ .Title }}
-      </div>
+      </div> -->
     </div>
 
     {{ with .Site.Social.twitter }}
@@ -22,12 +22,12 @@
       <a href="https://github.com/{{ . }}" title="@{{ . }} on GitHub" target="_blank" class="toggle-button icon icon-github"></a>
     </div>
     {{ end }}
-    
-    <!-- TODO: disabled until Hugo supports the generation of a content index natively 
+
+    <!-- TODO: disabled until Hugo supports the generation of a content index natively
     <div class="button button-search" role="button" aria-label="Search">
       <label class="toggle-button icon icon-search" title="Search" for="toggle-search"></label>
     </div>
-    -->    
+    -->
   </div>
   <div class="bar search">
     <div class="button button-close" role="button" aria-label="Close">

@@ -1,3 +1,68 @@
-baseurl = "http://replace-this-with-your-hugo-site.com/"
+baseurl = "https://docs.forestgiant.com/"
 languageCode = "en-us"
-title = "My New Hugo Site"
+title = "Docs | Forest Giant IoT Edge Platform"
+metadataformat = "toml"
+canonifyurls = true
+# Enable Google Analytics by entering your tracking id
+googleAnalytics = ""
+
+[params]
+	# General information
+	author = ""
+	description = ""
+	copyright = ""
+
+	# Repository
+	provider = "GitHub"
+	repo_url = "https://github.com/forestgiant"
+
+	version = "1.0.0"
+	logo = "images/logo.png"
+	favicon = ""
+
+	permalink = "#"
+
+	# Custom assets
+	custom_css = []
+	custom_js  = []
+
+	# Syntax highlighting theme
+	highlight_css  = ""
+
+	[params.palette]
+    	primary = "blue"
+    	accent  = "green"
+
+    [params.font]
+    	text = "Ubuntu"
+    	code = "Ubuntu Mono"
+
+
+[social]
+	twitter = "forestgiant"
+	gitter = ""
+	github  = "forestgiant"
+	email   = "hello@forestgiant.com"
+
+
+[[menu.main]]
+	name   = "Overview"
+	url    = "/"
+	weight = 0
+
+[[menu.main]]
+	name   = "Stela"
+	url    = "stela/"
+	weight = 10
+
+[[menu.main]]
+	name   = "Iris"
+	url    = "iris/"
+	weight = 20
+
+
+[blackfriday]
+	smartypants	= true
+	fractions = true
+	smartDashes = true
+	plainIDAnchors = true

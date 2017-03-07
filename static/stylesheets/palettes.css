@@ -1,0 +1,98 @@
+@supports (-webkit-appearance:none) {
+  .palette-primary-blue {
+    background: #20B2C6
+  }
+}
+
+.palette-primary-blue .footer,.palette-primary-blue .header {
+  background: #20B2C6
+}
+
+.palette-primary-blue .drawer .toc a.current,.palette-primary-blue .drawer .toc a:focus,.palette-primary-blue .drawer .toc a:hover {
+  color: #20B2C6
+}
+
+.palette-primary-blue .drawer .anchor a {
+  border-left: 2px solid #20B2C6
+}
+
+.ios.standalone .palette-primary-blue .article {
+  background: -webkit-linear-gradient(top,#fff 50%,#20B2C6 0);
+  background: linear-gradient(180deg,#fff 50%,#20B2C6 0)
+}
+
+.palette-primary-blue .article a,.palette-primary-blue .article code,.palette-primary-blue .article h1,.palette-primary-blue .article h2 {
+  color: #20B2C6
+}
+
+.palette-primary-blue .article .headerlink {
+  color: rgba(0,0,0,.26)
+}
+
+.palette-primary-blue .article table th {
+  background: #8099fd /*original contrast was #5677fc */
+}
+
+.palette-primary-blue .results .meta {
+  background: #20B2C6
+}
+
+@supports (-webkit-appearance:none) {
+  .palette-primary-green {
+    background: #67B769
+  }
+}
+
+.palette-primary-green .footer,.palette-primary-green .header {
+  background: #67B769
+}
+
+.palette-primary-green .drawer .toc a.current,.palette-primary-green .drawer .toc a:focus,.palette-primary-green .drawer .toc a:hover {
+  color: #67B769
+}
+
+.palette-primary-green .drawer .anchor a {
+  border-left: 2px solid #67B769
+}
+
+.ios.standalone .palette-primary-green .article {
+  background: -webkit-linear-gradient(top,#fff 50%,#67B769 0);
+  background: linear-gradient(180deg,#fff 50%,#67B769 0)
+}
+
+.palette-primary-green .article a,.palette-primary-green .article code,.palette-primary-green .article h1,.palette-primary-green .article h2 {
+  color: #67B769
+}
+
+.palette-primary-green .article .headerlink {
+  color: rgba(0,0,0,.26)
+}
+
+.palette-primary-green .article table th {
+  background: #5cb45b /* original contrast was #259b24 */
+}
+
+.palette-primary-green .results .meta {
+  background: #67B769
+}
+
+
+.palette-accent-green .article a:focus,.palette-accent-green .article a:hover {
+  color: #67B769
+}
+
+.palette-accent-green .repo a {
+  background: #67B769
+}
+
+@media only screen and (max-width:959px) {
+
+  .palette-primary-blue .project {
+    background: #20B2C6
+  }
+
+  .palette-primary-green .project {
+    background: #67B769
+  }
+
+}
