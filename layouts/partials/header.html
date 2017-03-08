@@ -6,6 +6,9 @@
       </label>
     </div>
     <div class="stretch">
+      <div class="title">
+        <img src="../images/fg-logo.png">
+      </div>
       <!-- <div class="title">
         {{ .Title }}
       </div> -->
@@ -17,17 +20,20 @@
     </div>
     {{ end }}
 
+    <div class="button button-gitter" role="button" aria-label="Gitter">
+      <a href="https://gitter.im/forestgiant/"></a>
+      </div>
+
     {{ with .Site.Social.github }}
     <div class="button button-github" role="button" aria-label="GitHub">
       <a href="https://github.com/{{ . }}" title="@{{ . }} on GitHub" target="_blank" class="toggle-button icon icon-github"></a>
     </div>
     {{ end }}
 
-    <!-- TODO: disabled until Hugo supports the generation of a content index natively
-    <div class="button button-search" role="button" aria-label="Search">
+    <!-- <div class="button button-search" role="button" aria-label="Search">
       <label class="toggle-button icon icon-search" title="Search" for="toggle-search"></label>
-    </div>
-    -->
+    </div> -->
+
   </div>
   <div class="bar search">
     <div class="button button-close" role="button" aria-label="Close">

@@ -1,6 +1,7 @@
 +++
 date = "2017-03-06T15:17:58-05:00"
-title = "Stela"
+title = "Stela Overview"
+weight = "10"
 
 +++
 

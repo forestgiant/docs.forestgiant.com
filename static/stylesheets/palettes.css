@@ -12,8 +12,13 @@
   color: #20B2C6
 }
 
-.palette-primary-blue .drawer .anchor a {
+.palette-primary-blue .drawer .anchor .article a {
   border-left: 2px solid #20B2C6
+
+}
+
+.palette-primary-blue .article a  {
+  color: #20B2C6
 }
 
 .ios.standalone .palette-primary-blue .article {
@@ -21,8 +26,8 @@
   background: linear-gradient(180deg,#fff 50%,#20B2C6 0)
 }
 
-.palette-primary-blue .article a,.palette-primary-blue .article code,.palette-primary-blue .article h1,.palette-primary-blue .article h2 {
-  color: #20B2C6
+.palette-primary-blue .palette-primary-blue .article code,.palette-primary-blue .article h1,.palette-primary-blue .article h2 {
+  color: #4D4C4F
 }
 
 .palette-primary-blue .article .headerlink {

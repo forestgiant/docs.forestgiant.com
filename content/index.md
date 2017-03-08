@@ -1,11 +1,13 @@
----
++++
 date: 2016-03-08T21:07:13+01:00
 title: FG IoT Edge Platform Docs
 type: index
 weight: 0
----
+
++++
 
 Otis is a set of services and tools designed to streamline local application discovery and communication. Currently Otis is comprised of two open source microservices, Stela and Iris.  The former provides an easy to use service discovery service, while the later is a distributed key-value store.
+
 
 {{< flex-row >}}
 
@@ -50,18 +52,10 @@ Iris can be run on a single node or many for fault tolerance on your network. Do
 ## Building Applications
 The Otis core services of Stela and Iris are designed to make it easy to connect to applications running on a local network.  By utilizing Stela for service discovery you can create applications that don't require additional configuration as IP addresses change or nodes come and go from the network.  Iris can store multiple sets of application configuration information and easily give your app a persistent state that is easy to update from any other app using Iris.
 
-#### Best Practices
+### Best Practices
 - To get the most out of Stela it is best to run an instance of the service on each node that wishes to register or discover a service on the network.  
 - Stela comes with a default port and mulitcast and if you are the only user/developer it should not be a problem, but once you go to production with your application it is best to use a different port and multicast than the default.
-- Portutil is a handy go package that dynamically finds any open ports on your system <https://github.com/forestgiant/portutil>.  This is handy when developing and testing applications on a single computer.
+- `Portutil` is a handy Go package that dynamically finds any open ports on your system <https://github.com/forestgiant/portutil>.  This is helpful when developing and testing applications on a single computer.
 
-#### Contribute + Join the Community
-The Otis core services of Stela and Iris are open source and licensed under the Apache 2.0.  We want to encourage people to post any problems they might have on the github issues pages for the respective service as well as join us on gitter <http://www.gitter.com/otis> to ask any questions or post problems with your applicaiton.
-
-## Download Today
-
-Install with `git`:
-
-```sh
-git clone git@github.com:digitalcraftsman/hugo-material-docs.git themes/hugo-material-docs
-```
+### Contribute + Join the Community
+The Otis core services of Stela and Iris are open source and licensed under the Apache 2.0.  We want to encourage people to post any problems they might have on the github issues pages for the respective service as well as join us on Gitter <http://www.gitter.com/forestgiant> to ask any questions or post problems with your application.

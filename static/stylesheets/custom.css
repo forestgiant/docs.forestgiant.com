@@ -1,5 +1,13 @@
 .header {
-  background-color: #F2F2F3 !important;
+  background-color: #FFF !important;
+  color: #4D4C4F;
+}
+
+.button.button-gitter {
+  background-image: url("../images/icon-gitter.svg");
+  width: 20px;
+  background-repeat: no-repeat;
+  background-position: 30%;
 }
 
 /*** FLEXBOX ***/
@@ -17,7 +25,7 @@
 
 
 @media only screen and (max-width:768px) {
-  
+
   .flex-container {
     flex-direction: column;
   }

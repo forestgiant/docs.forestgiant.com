@@ -10,14 +10,14 @@ googleAnalytics = ""
 	# General information
 	author = ""
 	description = ""
-	copyright = ""
+	copyright = "Forest Giant"
 
 	# Repository
 	provider = "GitHub"
 	repo_url = "https://github.com/forestgiant"
 
 	version = "1.0.0"
-	logo = "images/logo.png"
+	logo = "static/images/fg-logo.png"
 	favicon = ""
 
 	permalink = "#"
