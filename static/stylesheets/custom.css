@@ -10,6 +10,20 @@
   background-position: 30%;
 }
 
+
+.repo-download a .icon-github {
+  margin-right: 5px;
+}
+
+.repo-download a {
+  width: 100px;
+  text-align: center;
+}
+
+.repo-download a[title~="Iris"]{
+  background-color: #20B2C6;
+}
+
 /*** FLEXBOX ***/
 
 .flex-container {
@@ -34,4 +48,62 @@
     padding: 0;
   }
 
+}
+
+/*** CODE SNIPPET TOGGLES ***/
+/*** Change shortcode if more than 2 langs ***/
+
+.code-toggle input[type=radio]{
+  display: none;
+}
+
+.code-toggle input:checked:nth-child(1) ~ .tab label:nth-child(1),
+.code-toggle input:checked:nth-child(2) ~ .tab label:nth-child(2)
+/*#tab-2:checked ~ .tab label:nth-child(2) */
+{
+  border-bottom: 2px solid black;
+}
+
+.code-toggle-content > div {
+  display: none;
+}
+
+/*#tab-1:checked ~ .code-toggle-content div:nth-child(1),
+#tab-2:checked ~ .code-toggle-content div:nth-child(2) */
+.code-toggle input:checked:nth-child(1) ~ .code-toggle-content div:nth-child(1),
+.code-toggle input:checked:nth-child(2) ~ .code-toggle-content div:nth-child(2) 
+{
+  display: block;
+}
+
+.code-toggle {
+  margin: 0 auto;
+  padding: 15px;
+  max-width: 800px;
+}
+
+.tab {
+  overflow: hidden;
+  label {
+    font-size: 18px;
+    cursor: pointer;
+    float: left;
+    color: #000;
+    width: 25%;
+    text-align: center;
+    padding: 15px 0;
+    font-weight: 600;
+    user-select: none;
+    -webkit-user-select: none;
+  }
+}
+
+.code-toggle-content {
+  background-color: #fff;
+  min-height: 250px;
+  > div {
+    padding: 30px;
+    line-height: 1.5;
+    font-size: 17px;
+  }
 }

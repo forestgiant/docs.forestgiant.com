@@ -1,0 +1,15 @@
+<div class="code-toggle">
+  <input type="radio" id="tab-1" name="show" checked/>
+  <input type="radio" id="tab-2" name="show" />
+
+  <div class="tab">
+    <label for="tab-1">Go</label>
+    <label for="tab-2">Node.js</label>
+  </div>
+
+  <div class="code-toggle-content">
+
+    {{ printf "%s" .Inner | safeHTML }}
+
+  </div>
+</div>

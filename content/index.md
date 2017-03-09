@@ -1,10 +1,10 @@
-+++
+---
 date: 2016-03-08T21:07:13+01:00
 title: FG IoT Edge Platform Docs
 type: index
 weight: 0
 
-+++
+---
 
 Otis is a set of services and tools designed to streamline local application discovery and communication. Currently Otis is comprised of two open source microservices, Stela and Iris.  The former provides an easy to use service discovery service, while the later is a distributed key-value store.
 
@@ -31,7 +31,7 @@ Otis is a set of services and tools designed to streamline local application dis
 
 ---
 
-## Stela Overview
+## Stela
 Stela is a distributed discovery service meant to be run on local networks.  Stela was designed so that a copy of the Stela daemon is running on each node that either has a service to register or is discovering a service.  There are two requirements for the Stela daemons to be able to talk with each other: they need to be on the same local network, and they need to be using the same multicast port.  If those requirements are met, an application can interact with the Stela instance running on the same host and know what services are registered to all other instances running using the same multicast.
 
 ### How do I use Stela?
@@ -42,7 +42,7 @@ In additional to having a node.js and Go API there is also a Stela watch dog uti
 
 ---
 
-## Iris Overview
+## Iris
 Iris is a distributed streaming key value store.  Iris can be run as a single instance on your network or as multiple instances to add additional fault tolerance.  Iris uses the raft consensus algorithm to distribute the key value data across the other running nodes. Iris is a designed to be very easy to use. Iris lets you organize keys into sources.  One use case of this is to store different configuration data for a given key across different sources.  You can then switch the source without worrying about losing the value data stored in previous source.
 
 ### How do I use Iris?

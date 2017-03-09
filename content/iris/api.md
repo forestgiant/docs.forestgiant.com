@@ -1,9 +1,17 @@
 +++
 date = "2017-03-06T15:18:23-05:00"
-title = "Iris | Go API Docs "
+title = "Iris | API Docs"
 +++
 
-**Creating a Client:** Iris uses gRPC behind the scenes for communication between the API and the service. When doing any transaction between the API and the service we recommend creating a context with a timeout.  We recommend always adding a timeout to your context and only reusing a context for requests that make sense.  The timeout amount should be the max amount of time you think it should take for the service to respond to your request, typically this is very quick.
+#### Iris API documentation for Go and Node.js
+---
+## Creating a Client
+Iris uses gRPC behind the scenes for communication between the API and the service. When doing any transaction between the API and the service we recommend creating a context with a timeout.  We recommend always adding a timeout to your context and only reusing a context for requests that make sense.  The timeout amount should be the max amount of time you think it should take for the service to respond to your request, typically this is very quick.  Remember to close your client when you are finished using it.
+
+
+{{< code-toggle >}}
+
+{{< code-content >}}
 ```golang
 ctx, cancel := context.WithTimeout(context.Background(), 500*time.Millisecond)
 defer cancel()
@@ -14,43 +22,305 @@ if err != nil {
     return
 }
 defer testClient.Close()
-```
 
-**Getting values for a source and key:** Iris makes it easy to retrieve a value for a given source and key once you have a client instance. When getting or setting values with the Iris API the data needs to be encoded into a byte slice.  If this is a struct then you will need to create your own encoding and decoding method.  If it is a simple string then you can cast it in and out of a `[]byte` slice.
+//use the client
+```
+{{< /code-content >}}
+
+{{< code-content >}}
+```javascript
+const iris_client = require('iris');
+
+var client = new iris_client('127.0.0.1:32000');
+client.connect().then((response) => {
+    //use the client
+    client.close();
+}).catch((error) => {
+    //handle connection error
+    client.close();
+});
+```
+{{< /code-content >}}
+
+{{< /code-toggle >}}
+
+## Setting values for a source and key
+Iris makes it easy to set and retrieve a value for a given source and key once you have a client instance. When getting or setting values with the Iris API the data needs to be encoded into a sequence of bytes.  If this is a custom struct or object type then you will need to create your own encoding and decoding method.
+
+{{< code-toggle >}}
+{{< code-content >}}
+```golang
+ctx, cancel := context.WithTimeout(context.Background(), 500*time.Millisecond)
+defer cancel()
+
+var encoded = []byte("value")
+if err := testClient.SetValue(ctx, "source", "key", encoded); err != nil {
+    //handle set value error
+    return
+}
+```
+{{< /code-content >}}
+{{< code-content >}}
+```javascript
+client.connect().then((response) => {
+    var encoded = Buffer.from("value").toString('base64');
+    return client.setValue('source', 'key', encoded);
+}).then((response) => {
+    client.close();
+}).catch((error) => {
+    //handle set value error
+    client.close();
+});
+```
+{{< /code-content >}}
+{{< /code-toggle >}}
+
+## Getting values for a source and key
+Similar to setting values for a source, retrieval is easy.  Remember to decode the returned value if you encoded it when setting the value.
+
+### Go Example
 ```golang
 ctx, cancel := context.WithTimeout(context.Background(), 500*time.Millisecond)
 defer cancel()
 
 value, err := testClient.GetValue(ctx, "source", "key")
 if err != nil {
-    //handle GetValue error
+    //handle error getting values
     return
 }
+
+// decode value if necessary
+decoded := string(value);
 ```
 
-**Setting values for a source and key:** Similar to getting values you need to first encode your data as a `[]byte` slice then you can set the value for the key and source.
+### Node Example
+```javascript
+client.connect().then((response) => {
+    return client.getValue('source', 'key');
+}).then((response) => {
+    // decode value if necessary
+    var decoded = Buffer.from(response.value, 'base64').toString();
+    client.close();
+}).catch((error) => {
+    //handle error getting values
+    client.close();
+});
+```
+
+## Getting all known sources
+You can use the following code to find all sources known to Iris.
+
+### Go Example
 ```golang
 ctx, cancel := context.WithTimeout(context.Background(), 500*time.Millisecond)
 defer cancel()
 
-if err := testClient.SetValue(ctx, "source", "key", []byte("value")); err != nil {
-    //handle SetValue error
+sources, err := testClient.GetSources(ctx)
+if err != nil {
+    //handle get sources error
     return
 }
 ```
 
-**Subscribing to a source and key:** Subscribing to a key allows you to stream any changes to it as Iris knows about it.  This allows your application to quickly respond to any changes posted to Iris.
+### Node Example
+```javascript
+client.connect().then((response) => {
+    return client.getSources();
+}).then((sources) => {
+    client.close();
+}).catch((error) => {
+    //handle get sources error
+    client.close();
+});
+```
+
+## Getting all known keys for a source
+You can use the following code to find all known keys for a given source.
+
+### Go Example
 ```golang
 ctx, cancel := context.WithTimeout(context.Background(), 500*time.Millisecond)
 defer cancel()
 
-var handler UpdateHandler = func(u *pb.Update) error {
-    //this will be called when a value is updated for the key
+keys, err := testClient.GetKeys(ctx, "source")
+if err != nil {
+    //handle get keys error
+    return
+}
+```
+
+### Node Example
+```javascript
+client.connect().then((response) => {
+    return client.getKeys('source');
+}).then((keys) => {
+    client.close();
+}).catch((error) => {
+    //handle get keys error
+    client.close();
+});
+```
+
+## Removing a source
+You can use the following code to remove a source from Iris.
+
+### Go Example
+```golang
+ctx, cancel := context.WithTimeout(context.Background(), 500*time.Millisecond)
+defer cancel()
+
+if err := testClient.RemoveSource(ctx, "source"); err != nil {
+    //handle remove source error
+    return
+}
+```
+
+### Node Example
+```javascript
+client.connect().then((response) => {
+    return client.removeSource('source');
+}).then((keys) => {
+    client.close();
+}).catch((error) => {
+    //handle remove source error
+    client.close();
+});
+```
+
+## Removing a value
+You can use the following code to remove a key-value pair from Iris.
+
+### Go Example
+```golang
+ctx, cancel := context.WithTimeout(context.Background(), 500*time.Millisecond)
+defer cancel()
+
+if err := testClient.RemoveValue(ctx, "source", "key"); err != nil {
+    //handle remove value error
+    return
+}
+```
+
+### Node Example
+```javascript
+client.connect().then((response) => {
+    return client.removeValue('source', 'key');
+}).then((keys) => {
+    client.close();
+}).catch((error) => {
+    //handle remove value error
+    client.close();
+});
+```
+
+## Subscribing to a source
+Subscribing to a source allows you to stream any changes to it as Iris knows about it.  This allows your application to quickly respond to any changes posted to this source.
+
+### Go Example
+```golang
+ctx, cancel := context.WithTimeout(context.Background(), 500*time.Millisecond)
+defer cancel()
+
+var handler UpdateHandler = func(u *pb.Update) {
+    //this will be called when a value is updated
     fmt.Println("Received updated value", u.Value, "for source", u.Source, "and key", u.Key)
-    return nil
+}
+
+if _, err := testClient.Subscribe(ctx, "source", &handler); err != nil {
+    //handle subscribe error
+}
+```
+
+### Node Example
+```javascript
+var handler = function(update){
+    //this will be called when a value is updated
+    console.log("Received updated value", update.value, "for source", update.source, "and key", update.key)
+};
+
+client.connect().then((response) => {
+    return client.subscribe('source', handler);
+}).then((response) => {
+    client.close();
+}).catch((error) => {
+    //handle subscribe error
+    client.close();
+});
+```
+
+## Subscribing to a source and key
+If you just want to hear about changes to a particular key-value pair, you can do that as well.  Subscribing to a key allows you to stream any changes to a specific key of a source as Iris knows about it.  This allows your application to quickly respond to any changes posted to this key.
+
+### Go Example
+```golang
+ctx, cancel := context.WithTimeout(context.Background(), 500*time.Millisecond)
+defer cancel()
+
+var handler UpdateHandler = func(u *pb.Update) {
+    //this will be called when a value is updated
+    fmt.Println("Received updated value", u.Value, "for source", u.Source, "and key", u.Key)
 }
 
 if _, err := testClient.SubscribeKey(ctx, "source", "key", &handler); err != nil {
-    //handle SubscribeKey error
+    //handle subscribe key error
 }
+```
+
+### Node Example
+```javascript
+var handler = function(update){
+    //this will be called when a value is updated
+    console.log("Received updated value", update.value, "for source", update.source, "and key", update.key)
+};
+
+client.connect().then((response) => {
+    return client.subscribeKey('source', 'key', handler);
+}).then((response) => {
+    client.close();
+}).catch((error) => {
+    //handle subscribe key error
+    client.close();
+});
+```
+
+## Unsubscribing an update handler
+If you subscribed an update handler to a source or key, unsubscribing the handler is easy.  Just use the unsubscribe method that matches the subscribe method you used.
+
+### Go Example
+```golang
+ctx, cancel := context.WithTimeout(context.Background(), 500*time.Millisecond)
+defer cancel()
+
+var handler UpdateHandler = func(u *pb.Update) {
+    //this will be called when a value is updated
+    fmt.Println("Received updated value", u.Value, "for source", u.Source, "and key", u.Key)
+}
+
+// Unsubscribe from the entire source
+if _, err := testClient.Unsubscribe(ctx, "source", &handler); err != nil {
+    //handle Unsubscribe error
+}
+
+// Unsubscribe from the key
+if _, err := testClient.UnsubscribeKey(ctx, "source", "key", &handler); err != nil {
+    //handle UnsubscribeKey error
+}
+```
+
+### Node Example
+```javascript
+var handler = function(update){
+    //this will be called when a value is updated
+    console.log("Received updated value", update.value, "for source", update.source, "and key", update.key)
+};
+
+client.connect().then((response) => {
+    return client.unsubscribe('source', handler);
+}).then((response) => {
+    return client.unsubscribeKey('source', 'key', handler);
+}).then((response) => {
+    client.close();
+}).catch((error) => {
+    client.close();
+});
 ```
