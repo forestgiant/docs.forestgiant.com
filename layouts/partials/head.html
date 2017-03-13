@@ -70,6 +70,10 @@
     <link rel="stylesheet" href="{{ . | absURL }}">
     {{ end }}
     <script src="{{ "javascripts/modernizr.js" | absURL }}"></script>
+    <script src="https://code.jquery.com/jquery-3.1.1.min.js" integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8=" crossorigin="anonymous"></script>
+    <script src="{{ "javascripts/codetoggle.js" | absURL }}"></script>
+
+
 
     {{ with .RSSLink }}
     <link href="{{ . }}" rel="alternate" type="application/rss+xml" title="{{ $.Site.Title }}" />
