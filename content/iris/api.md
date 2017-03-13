@@ -8,10 +8,10 @@ title = "Iris | API Docs"
 ## Creating a Client
 Iris uses gRPC behind the scenes for communication between the API and the service. When doing any transaction between the API and the service we recommend creating a context with a timeout.  We recommend always adding a timeout to your context and only reusing a context for requests that make sense.  The timeout amount should be the max amount of time you think it should take for the service to respond to your request, typically this is very quick.  Remember to close your client when you are finished using it.
 
-
-{{< code-toggle >}}
+{{< code-toggle id1="go-create-client" id2="node-create-client" >}}
 
 {{< code-content >}}
+
 ```golang
 ctx, cancel := context.WithTimeout(context.Background(), 500*time.Millisecond)
 defer cancel()
@@ -47,8 +47,10 @@ client.connect().then((response) => {
 ## Setting values for a source and key
 Iris makes it easy to set and retrieve a value for a given source and key once you have a client instance. When getting or setting values with the Iris API the data needs to be encoded into a sequence of bytes.  If this is a custom struct or object type then you will need to create your own encoding and decoding method.
 
-{{< code-toggle >}}
+{{< code-toggle id1="go-set-values" id2="node-set-values" >}}
+
 {{< code-content >}}
+
 ```golang
 ctx, cancel := context.WithTimeout(context.Background(), 500*time.Millisecond)
 defer cancel()
@@ -60,7 +62,9 @@ if err := testClient.SetValue(ctx, "source", "key", encoded); err != nil {
 }
 ```
 {{< /code-content >}}
+
 {{< code-content >}}
+
 ```javascript
 client.connect().then((response) => {
     var encoded = Buffer.from("value").toString('base64');

@@ -1,10 +1,10 @@
 <div class="code-toggle">
-  <input type="radio" id="tab-1" name="show" checked/>
-  <input type="radio" id="tab-2" name="show" />
+  <input type="radio" id='{{ .Get "id1"}}' name ="go-code" />
+  <input type="radio" id='{{ .Get "id2"}}' name="node-code" />
 
   <div class="tab">
-    <label for="tab-1">Go</label>
-    <label for="tab-2">Node.js</label>
+    <label for='{{ .Get "id1"}}'>Go</label>
+    <label for='{{ .Get "id2"}}'>Node.js</label>
   </div>
 
   <div class="code-toggle-content">

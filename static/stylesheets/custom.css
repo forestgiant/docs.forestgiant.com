@@ -57,24 +57,39 @@
   display: none;
 }
 
+
+
 .code-toggle input:checked:nth-child(1) ~ .tab label:nth-child(1),
 .code-toggle input:checked:nth-child(2) ~ .tab label:nth-child(2)
-/*#tab-2:checked ~ .tab label:nth-child(2) */
 {
   border-bottom: 2px solid black;
 }
 
-.code-toggle-content > div {
-  display: none;
-}
 
-/*#tab-1:checked ~ .code-toggle-content div:nth-child(1),
-#tab-2:checked ~ .code-toggle-content div:nth-child(2) */
 .code-toggle input:checked:nth-child(1) ~ .code-toggle-content div:nth-child(1),
-.code-toggle input:checked:nth-child(2) ~ .code-toggle-content div:nth-child(2) 
+.code-toggle input:checked:nth-child(2) ~ .code-toggle-content div:nth-child(2)
 {
   display: block;
 }
+
+/*.code-toggle input:checked:nth-child(odd) ~ .code-toggle-content div:nth-child(odd),
+.code-toggle input:checked:nth-child(even) ~ .code-toggle-content div:nth-child(even) {
+  display: block;
+}*/
+
+
+.code-toggle input:not(:checked):nth-child(1) ~ .code-toggle-content div:nth-child(1),
+.code-toggle input:not(:checked):nth-child(2) ~ .code-toggle-content div:nth-child(2) {
+  display: none;
+}
+
+/*.code-toggle input:not(:checked) ~ .code-toggle-content div {
+  display: none;
+}*/
+
+
+
+
 
 .code-toggle {
   margin: 0 auto;
