@@ -1,9 +1,8 @@
 baseurl = "https://docs.forestgiant.com/"
 languageCode = "en-us"
-title = "Docs | Forest Giant IoT Edge Platform"
+title = "Documentation | Forest Giant IoT Edge Platform"
 metadataformat = "toml"
 canonifyurls = true
-# Enable Google Analytics by entering your tracking id
 googleAnalytics = ""
 
 [params]
@@ -46,19 +45,54 @@ googleAnalytics = ""
 
 
 [[menu.main]]
-	name   = "Overview"
+	name   = "Platform Overview"
 	url    = "/"
-	weight = 10
+	weight = 1
 
 [[menu.main]]
 	name   = "Stela"
-	url    = "stela/"
-	weight = 20
+	url    = "/stela"
+	weight = 2
+	identifier = "stela"
 
 [[menu.main]]
 	name   = "Iris"
-	url    = "iris/"
+	url    = "/iris"
+	weight = 3
+	identifier = "iris"
+
+[[menu.main]]
+	name   = "Stela API"
+	url    = "stela/api"
+	weight = 10
+	parent = "stela"
+
+[[menu.main]]
+	name   = "Using Stela"
+	url    = "stela/usage"
+	weight = 20
+	parent = "stela"
+
+[[menu.main]]
+	name   = "Stela Watchdog"
+	url    = "stela/watchdog"
 	weight = 30
+	parent = "stela"
+
+[[menu.main]]
+	name   = "Iris API"
+	url    = "iris/api"
+	weight = 40
+	parent = "iris"
+
+[[menu.main]]
+	name   = "Using Iris"
+	url    = "iris/usage"
+	weight = 50
+	parent = "iris"
+
+
+
 
 
 [blackfriday]
