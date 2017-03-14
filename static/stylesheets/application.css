@@ -360,7 +360,8 @@ hr {
   display: table;
   max-width: 1184px;
   margin-left: auto;
-  margin-right: auto
+  margin-right: auto;
+  border-spacing: 8px 0;
 }
 
 .bar a {
@@ -377,7 +378,7 @@ hr {
 
 .button {
   display: table-cell;
-  vertical-align: top;
+  vertical-align: center;
   width: 1%
 }
 
@@ -526,15 +527,16 @@ body,input {
 
 .drawer .toc li a {
   display: block;
-  padding: 14.5px 24px;
+  padding: 5px 24px;
   white-space: nowrap;
   overflow: hidden;
-  text-overflow: ellipsis
+  text-overflow: ellipsis;
+  font-weight: normal;
 }
 
 .drawer .toc li.anchor a {
   margin-left: 12px;
-  padding: 10px 24px 10px 12px
+  padding: 5px 24px;
 }
 
 .drawer .toc li ul {
@@ -551,7 +553,7 @@ body,input {
 }
 
 .drawer .scrollable {
-  top: 104px;
+  /*top: 104px;*/
   z-index: -1
 }
 
@@ -650,10 +652,6 @@ body,input {
 
 .no-js .repo a .count {
   display: none
-}
-
-.drawer .toc li a {
-  font-weight: 700
 }
 
 .drawer .toc li.anchor a {
@@ -1385,7 +1383,7 @@ h1 .article .headerlink {
 
   .header .stretch .title {
     font-size: 20px;
-    padding: 12px 0
+    padding: 8px 0
   }
 
   .project .name {

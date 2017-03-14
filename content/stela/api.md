@@ -1,8 +1,7 @@
 +++
 date = "2017-03-06T15:17:58-05:00"
-title = "Stela API Reference"
+title = "Stela API"
 weight = "20"
-
 +++
 
 Creating a Client

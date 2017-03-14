@@ -1,8 +1,8 @@
 ---
 date: 2016-03-08T21:07:13+01:00
-title: FG IoT Edge Platform Docs
+title: Platform Overview
 type: index
-weight: 0
+weight: 10
 
 ---
 

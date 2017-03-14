@@ -1,7 +1,7 @@
 +++
 date = "2017-03-06T15:18:17-05:00"
-title = "Iris | Usage"
-
+title = "Iris Usage"
+weight = "60"
 +++
 
 ## Getting Iris

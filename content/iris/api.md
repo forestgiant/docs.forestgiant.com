@@ -1,6 +1,7 @@
 +++
 date = "2017-03-06T15:18:23-05:00"
-title = "Iris | API Docs"
+title = "Iris API"
+weight = "50"
 +++
 
 #### Iris API documentation for Go and Node.js
