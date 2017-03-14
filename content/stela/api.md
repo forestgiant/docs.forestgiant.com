@@ -24,7 +24,7 @@ import (
 
 ctx, cancelFunc := context.WithTimeout(context.Background(), 500*time.Millisecond)
 defer cancelFunc()
-client, err := stela_api.NewClient(ctx, stela.DefaultStelaAddress, "../testdata/ca.pem")
+client, err := stela_api.NewClient(ctx, stela.DefaultStelaAddress, nil)
 if err != nil {
     log.Fatal(err)
 }
