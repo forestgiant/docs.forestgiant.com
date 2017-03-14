@@ -6,7 +6,7 @@ weight = "40"
 +++
 
 ## Getting Stelawd
-- You can download Stela Watch Dog (stelawd) from <http://www.getotis.com/download/stelawd> or clone the code from github <http://www.github.com/otis/stela>
+- Clone the code from github <http://www.github.com/forestgiant/stela>
 - Stelawd is written in Go and requires a setup Go (>= 1.7) environment <https://golang.org/doc/install> to build to code.  Stelawd is written in pure Go and supports all the platforms that Go does.
 
 ## Running Stelawd
