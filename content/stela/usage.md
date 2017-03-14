@@ -6,7 +6,7 @@ weight = "30"
 +++
 
 ## Getting Stela
-- You can download Stela from <http://www.getotis.com/download/stela> or clone the code from github <http://www.github.com/otis/stela>
+- Clone the code from github <http://www.github.com/forestgiant/stela>
 - Stela is written in Go and requires a setup Go (>= 1.7) environment <https://golang.org/doc/install> to build to code.  Stela is written in pure Go and supports all the platforms that Go does.
 
 ## Running Stela
