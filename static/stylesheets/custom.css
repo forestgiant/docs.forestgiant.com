@@ -67,19 +67,27 @@
 
 
 .tabs-thumb {
+	font-family: "Open Sans";
+	font-size: 13px;
+	font-weight: 600;
+	line-height: 22px;
+
 	display: inline-block;
-	line-height: 3;
+	/*line-height: 3;*/
 	position: relative;
+	color: #000000;
 
 	a {
 		display: block;
 		padding: 0 1.5rem;
 		color: #9d9d9d;
+		/*color: #0000ff;	*/
 		text-decoration: none;
 		cursor: pointer;
 
 		&:hover {
 			color: #fe5b2d;
+			/*color: #00ffff;*/
 		}
 	}
 }
@@ -91,10 +99,14 @@
 /* Active */
 .tabs-thumb.is-active a {
 	color: #fe5b2d;
+	/*color: #00ff00;*/
+	border-bottom: 2px solid #000000;
+
 
 	&:hover {
 		cursor: default;
 		color: #fe5b2d;
+		/*color: #ff5500;*/
 	}
 
 	&::after {
@@ -110,4 +122,82 @@
 
 a[title="Platform Overview"] {
   font-weight: 600 !important;
+}
+
+.tabs-thumb.is-inactive a {
+	color: #ff0000;
+	/*color: #00ff00;*/
+	border-bottom: 0px solid #000000;
+
+
+	&:hover {
+		cursor: default;
+		color: #fe5b2d;
+		/*color: #ff5500;*/
+	}
+
+	&::after {
+		content: '';
+		position: absolute;
+		bottom: -1px;
+		left: 0;
+		height: 2px;
+		width: 100%;
+		background: #fe5b2d;
+	}
+}
+
+
+
+/* code blocks */
+pre {
+  background-color: #ffffff;
+  border: 1px solid #EBEBEB;
+  border-radius: 4px;
+  padding-right: 40px;
+}
+
+.article .wrapper {
+  padding: 116px 63px 92px
+}
+
+@media only screen and (min-width:720px) {
+  .article .wrapper {
+    padding: 128px 63px 96px
+  }
+
+}
+
+
+
+
+/*Articles*/
+
+.article h1 {
+	font-family: "Open Sans";
+	font-size: 30px;
+	font-weight: 600;
+	line-height: 48px;
+	color: #4D4C4F;
+
+}
+
+.article h2{
+	font-family: "Open Sans";
+	font-size: 25px;
+	font-weight: 600;
+	line-height: 36px;
+	color: #4D4C4F;
+}
+
+.article p{
+	font-family: "Open Sans";
+	font-size: 15px;
+	font-weight: 600;
+	line-height: 24px;
+	color: #4D4C4F;
+}
+
+.article a {
+  border-bottom: 0px;
 }

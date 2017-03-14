@@ -14,8 +14,8 @@ Stela uses gRPC behind the scenes for communication between the API and the serv
 ```golang
 import (
     ...
-    "github.com/otis/stela"
-    stela_api "github.com/otis/stela/api"
+    "github.com/forestgiant/stela"
+    stela_api "github.com/forestgiant/stela/api"
     ...
 )
 
@@ -23,7 +23,7 @@ import (
 
 ctx, cancelFunc := context.WithTimeout(context.Background(), 500*time.Millisecond)
 defer cancelFunc()
-client, err := stela_api.NewClient(ctx, stela.DefaultStelaAddress, "../testdata/ca.pem")
+client, err := stela_api.NewClient(ctx, stela.DefaultStelaAddress, nil)
 if err != nil {
     log.Fatal(err)
 }

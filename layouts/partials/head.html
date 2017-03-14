@@ -51,7 +51,9 @@
     <link rel="stylesheet" href="{{ "stylesheets/temporary.css" | absURL }}">
     <link rel="stylesheet" href="{{ "stylesheets/palettes.css" | absURL }}">
     <link rel="stylesheet" href="{{ "stylesheets/custom.css" | absURL }}">
-    <link rel="stylesheet" href="{{ with .Site.Params.highlight_css }}{{ . | absURL }}{{ else }}{{ "stylesheets/highlight/highlight.css" | absURL }}{{ end }}">
+    <link rel="stylesheet" href="{{ with .Site.Params.highlight_css }}{{ . | absURL }}{{ else }}{{ "stylesheets/highlight/github.css" | absURL }}{{ end }}">
+
+    <!-- <link rel="stylesheet" href="{{ with .Site.Params.highlight_css }}{{ . | absURL }}{{ else }}{{ "stylesheets/highlight/highlight.css" | absURL }}{{ end }}"> -->
 
     {{/* set default values if no custom ones are defined */}}
     {{ $text := or .Site.Params.font.text "Roboto" }}
@@ -69,12 +71,16 @@
     {{ range .Site.Params.custom_css }}
     <link rel="stylesheet" href="{{ . | absURL }}">
     {{ end }}
+    <script src="{{ "javascripts/highlight.pack.js" | absURL }}"></script>
     <script src="{{ "javascripts/modernizr.js" | absURL }}"></script>
     <script src="https://code.jquery.com/jquery-3.1.1.min.js" integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8=" crossorigin="anonymous"></script>
     <script src="{{ "javascripts/codetoggle.js" | absURL }}"></script>
     <script src="{{ "javascripts/custom.js" | absURL }}"></script>
 
 
+    <!-- <script src="https://cdn.rawgit.com/google/code-prettify/master/loader/run_prettify.js"></script> -->
+
+    <script>hljs.initHighlightingOnLoad();</script>
 
 
     {{ with .RSSLink }}
