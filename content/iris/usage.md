@@ -5,7 +5,7 @@ title = "Iris | Usage"
 +++
 
 ## Getting Iris
-- You can download Iris from <http://www.getotis.com/download/iris> or clone the code from github <http://www.github.com/otis/iris>
+- Clone the code from github <http://www.github.com/forestgiant/iris>
 - Iris is written in Go and requires a setup Go (>= 1.7) environment <https://golang.org/doc/install> to build to code.  Iris is written in pure Go and supports all the platforms that Go does.
 
 ## Running Iris
