@@ -15,8 +15,8 @@ Stela uses gRPC behind the scenes for communication between the API and the serv
 ```golang
 import (
     ...
-    "github.com/otis/stela"
-    stela_api "github.com/otis/stela/api"
+    "github.com/forestgiant/stela"
+    stela_api "github.com/forestgiant/stela/api"
     ...
 )
 
