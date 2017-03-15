@@ -475,7 +475,7 @@ body,input {
 }
 
 .drawer .section {
-  color: rgba(0,0,0,.54)
+  color: #B6B6B6;
 }
 
 .ios.standalone .project:before {

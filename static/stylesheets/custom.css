@@ -92,6 +92,11 @@
 	}
 }
 
+ul.tabs-thumbs {
+  margin-bottom: -.75em;
+  margin-left: -1.25em;
+}
+
 .tabs-panel {
 	display: none;
 }
@@ -200,4 +205,8 @@ pre {
 
 .article a {
   border-bottom: 0px;
+}
+
+.button-gitter a, .button-github a {
+  height: 30px;
 }
