@@ -3,7 +3,7 @@ languageCode = "en-us"
 title = "Documentation | Forest Giant IoT Edge Platform"
 metadataformat = "toml"
 canonifyurls = true
-googleAnalytics = ""
+googleAnalytics = "UA-73558049-5"
 
 [params]
 	# General information
