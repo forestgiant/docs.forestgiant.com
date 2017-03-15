@@ -6,7 +6,7 @@ weight: 10
 
 ---
 
-Our platform is a set of services and tools designed to streamline local application discovery and communication. Currently it is comprised of two open source microservices, Stela and Iris.  The former provides an easy to use service discovery service, while the later is a distributed key-value store.
+Our platform is a set of services and tools designed to streamline local application discovery and communication. Currently it is comprised of two open source microservices, Stela and Iris.  The former provides an easy to use service discovery service, while the latter is a distributed key-value store.
 
 
 {{< flex-row >}}
