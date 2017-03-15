@@ -347,7 +347,7 @@ hr {
   user-select: none;
   left: 0;
   z-index: 2;
-  height: 56px;
+  height: 64px;
   padding: 4px;
   overflow: hidden
 }
@@ -403,11 +403,11 @@ hr {
 .stretch {
   display: table;
   table-layout: fixed;
-  width: 100%
+  width: 100%;
 }
 
 .header .stretch {
-  padding: 0 20px
+  padding: 0 20px 0 0;
 }
 
 .stretch .title {
@@ -1542,11 +1542,11 @@ h1 .article .headerlink {
   }
 }
 
-@media only screen and (max-width:479px) {
+/*@media only screen and (max-width:479px) {
   .button-github,.button-twitter {
     display: none
   }
-}
+}*/
 
 @media only screen and (min-width:720px) and (max-width:959px) {
   .header .stretch {
